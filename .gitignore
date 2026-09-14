@@ -1,0 +1,56 @@
+# Local environments and temporary files
+venvs/
+.venv/
+tmp/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Secrets and machine-specific settings
+.env
+.env.*
+*.key
+*.pem
+
+# Model artifacts and medical imaging data
+*.pth
+*.pt
+*.ckpt
+*.nii
+*.nii.gz
+*.npy
+*.npz
+
+# Generated runtime outputs
+outputs/
+predictions/
+checkpoints/
+checkpoint_download/
+test_data/
+test_output/
+*.log
+
+# Local Docker build metadata and reference papers
+image.id
+image.local-digests.json
+paper/
+
+# Nested upstream Git repository; track it as a submodule instead.
+challenge-codebase/
+
+# Private infrastructure notes and machine-specific runbooks
+context/
+**/BICMAC_SERVER_CONTEXT.md
+**/*SERVER_CONTEXT*.md
+
+# Keep only the public method specification from the experiment archive.
+experiments/*
+!experiments/BICMAC_V4_5_METHOD_TECHNICAL_PAPER_SOURCE.md
+
+# Keep only the portable Docker application sources.
+docker_final_v4_5/*
+!docker_final_v4_5/Dockerfile
+!docker_final_v4_5/requirements.txt
+!docker_final_v4_5/app/
+!docker_final_v4_5/app/**
