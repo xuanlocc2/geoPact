@@ -1,0 +1,7 @@
+*
+!Dockerfile
+!requirements.txt
+!app/
+!app/*.py
+!checkpoints/
+!checkpoints/model.pth

@@ -52,5 +52,8 @@ experiments/*
 docker_final_v4_5/*
 !docker_final_v4_5/Dockerfile
 !docker_final_v4_5/requirements.txt
+!docker_final_v4_5/README.md
+!docker_final_v4_5/.dockerignore
+!docker_final_v4_5/model.sha256
 !docker_final_v4_5/app/
-!docker_final_v4_5/app/**
+!docker_final_v4_5/app/*.py
