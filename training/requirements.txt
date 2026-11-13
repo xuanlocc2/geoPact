@@ -1,0 +1,5 @@
+# Install a hardware-appropriate PyTorch build separately, as for inference.
+-r ../docker_final_v4_5/requirements.txt
+PyYAML>=6.0,<7
+matplotlib>=3.10.8,<4
+# Optional HF uploads are disabled. Install huggingface_hub separately to enable.

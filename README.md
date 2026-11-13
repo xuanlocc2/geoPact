@@ -22,6 +22,7 @@ The method achieved a tied first average rank on the challenge private leaderboa
 | [`docker_final_v4_5/app/`](docker_final_v4_5/app/) | Inference, model, preprocessing, and PET-supervision source modules. |
 | [`challenge-codebase/`](challenge-codebase/) | Official BIC-MAC challenge codebase, tracked as a Git submodule. |
 | [`DATA_ACCESS.md`](DATA_ACCESS.md) | How to obtain official data and resources without committing private paths or artifacts. |
+| [`training/README.md`](training/README.md) | V4.5 training loop, config, losses, preflight, resume, and tests. |
 
 ## Data and external resources
 
@@ -60,7 +61,9 @@ Required inputs: `nacpet.nii.gz`, `mri_combined_in_phase.nii.gz`, `mri_combined_
 
 ## Training and validation status
 
-This release includes model, preprocessing, and PET-supervision components and a [method specification](experiments/BICMAC_V4_5_METHOD_TECHNICAL_PAPER_SOURCE.md). A complete training entrypoint and training configurations are not included in this public release.
+The repository includes the [V4.5 training pipeline](training/README.md), configuration, losses, preflight, checkpoint resume, and synthetic tests, alongside the [method specification](experiments/BICMAC_V4_5_METHOD_TECHNICAL_PAPER_SOURCE.md). Training requires authorized challenge data and PET supervision resources. See the training guide for setup and commands.
+
+The final recipe trains on all 75 labelled cases and reuses two training cases for monitoring; those monitoring metrics are not held-out validation. The published config preserves the documented epoch-118 loss adjustment. A complete 150-epoch GPU run has not been repeated for this publication.
 
 The challenge deployment target is one NVIDIA A40, 128 GB host RAM, and 300 seconds per subject. This is a target, not a runtime guarantee on other hardware. The original local record reports a successful cropped Docker smoke test; full-subject A40 qualification is not established by that record.
 

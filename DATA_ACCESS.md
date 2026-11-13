@@ -10,6 +10,11 @@ If the download is unavailable, [open an issue](https://github.com/xuanlocc2/geo
 
 ## Challenge data and evaluation
 
+The public [training pipeline](training/README.md) additionally needs official
+CT targets/masks and complete PET supervision labels for the configured eight
+PET-labelled subjects. Its original-data preflight checks 75 complete subjects.
+No training labels, patient metadata, or supervision caches are published.
+
 To reproduce an experiment, obtain the following resources from the BIC-MAC Challenge organizers and use them under the competition's data-use agreement:
 
 1. The official training and validation data supplied by the challenge.

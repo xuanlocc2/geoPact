@@ -10,6 +10,7 @@ __pycache__/
 # Secrets and machine-specific settings
 .env
 .env.*
+training/*.local.yaml
 *.key
 *.pem
 

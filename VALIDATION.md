@@ -31,3 +31,31 @@ and a full-subject host-memory failure in a roughly 8 GB Docker VM. These checks
 do not establish full-subject A40 runtime, memory qualification, prediction
 accuracy on external cohorts, or clinical generalization. The challenge target
 remains one A40, 128 GB host RAM, and 300 seconds per subject.
+
+## Training source publication (2026-11-13)
+
+The archived V4.5 training pipeline is now provided under `training/`.
+
+- All 13 training/test Python files passed syntax parsing.
+- Training, preflight, and full-volume validation CLI imports and `--help`
+  completed successfully.
+- Eight synthetic tests passed: sampling/split handling, missing PET-label
+  detection, controlled ray weighting, soft PET regions, resampling/cache on a
+  flipped physical grid, and finite nonzero loss backpropagation.
+- The training model loaded the public epoch-150 state dictionary strictly
+  (20,579,395 parameters).
+- Config environment expansion and missing-variable errors were checked;
+  remote uploads are disabled in the published config.
+- The configured PET loss weights were checked at epochs 1, 31, 91, 117, 118,
+  and 150, preserving the archived epoch-118 tuning phase.
+- Architecture, preprocessing, augmentation, optimization, and inference
+  settings were compared with the original checkpoint. The known differences
+  in path/upload settings and recorded loss history are explained in the
+  training guide.
+
+These checks used the same local CPU environment described above. The first
+test attempt hit a Windows temporary-directory permission error (seven tests
+passed); rerunning with a fresh temporary directory inside the workspace passed
+all eight. No complete-dataset preflight, new full training run, or new GPU
+training/inference was performed. Tests do not establish training accuracy,
+resource requirements, or bit-identical reproduction.

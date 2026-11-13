@@ -144,5 +144,6 @@ establish full-subject A40 qualification or clinical generalization.
 - CUDA OOM: use sufficient VRAM. Changing ROI may change predictions and no
   longer matches the fixed Docker recipe.
 
-A complete training entrypoint is not included. See the root README for method,
-data access, license, and support.
+The complete training implementation and recipe are provided separately in
+[`training/`](../training/README.md). See the root README for method, data access,
+license, and support.
